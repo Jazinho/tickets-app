@@ -1,0 +1,8 @@
+<h1> Wszystkie wydarzenia</h1>
+<ul>
+  <% for event in @events %>
+    <li><%= link_to event.artist, event %></li>
+  <% end %>
+</ul>
+<%= link_to 'Nowy koncert', new_event_path %>
+<%= link_to 'Powrot do menu', "/" %>
