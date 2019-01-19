@@ -26,5 +26,13 @@
   <%= @event.event_date %>
 </p>
 
-<%= link_to 'Back', events_index_path %>
+<br>
+<h2> ------ KUP BILET NA TO WYDARZENIE ------ </h2>
+<%= render "new_ticket", ticket: Ticket.new( :event_id=>@event.id) %>
+
+<br>
+<h2> ------ BILETY KUPIONE NA TO WYDARZENIE ------ </h2>
+<%= render "tickets_list" %>
+
+<%= link_to 'Back', events_path %>
 
