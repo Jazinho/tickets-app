@@ -1,14 +1,13 @@
 <h1>Nowy Event</h1>
 
-<%= form_with url: events_path, model: @event do |form| %>
+<%= form_for @event, :url => { :action => "create" } do |form| %>
   <% if @event.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_expplanation">
       <h2><%= pluralize(@event.errors.count, "error") %> prohibited this ticket from being saved:</h2>
-
       <ul>
-      <% @event.errors.full_messages.each do |message| %>
-       <li><%= message %></li>
-      <% end %>
+        <% @event.errors.full_messages.each do |message| %>
+          <li><%=message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -43,4 +42,4 @@
   </div>
 <% end %>
 
-<%= link_to 'Back', events_index_path %>
+<%= link_to 'Back', events_path %>
