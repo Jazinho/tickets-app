@@ -10,4 +10,5 @@ class Ticket < ApplicationRecord
   validate :price_in_scope
 
   belongs_to :event
+  belongs_to :user
 end
