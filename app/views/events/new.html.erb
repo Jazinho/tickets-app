@@ -1,4 +1,4 @@
-<h1>Nowy Event</h1>
+<h1 style="margin-bottom: 25px">Nowy Event</h1>
 
 <%= form_for @event, :url => { :action => "create" } do |form| %>
   <% if @event.errors.any? %>
@@ -14,32 +14,34 @@
 
   <div class="field">
     <%= form.label :artist %>
-    <%= form.text_field :artist %>
+    <%= form.text_field :artist, :class => 'form-control w-25' %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_field :description %>
+    <%= form.text_field :description, :class => 'form-control w-25' %>
   </div>
 
   <div class="field">
     <%= form.label :price_low %>
-    <%= form.text_field :price_low %>
+    <%= form.text_field :price_low, :class => 'form-control w-25' %>
   </div>
 
   <div class="field">
     <%= form.label :price_high %>
-    <%= form.text_field :price_high %>
+    <%= form.text_field :price_high, :class => 'form-control w-25' %>
   </div>
 
   <div class="field">
     <%= form.label :_event_date %>
-    <%= form.text_field :event_date %>
+    <%= form.text_field :event_date, :class => 'form-control w-25' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions" style="margin-top: 20px">
+    <%= form.submit 'Zapisz', :class => 'btn btn-default' %>
   </div>
 <% end %>
 
-<%= link_to 'Back', events_path %>
+<button class="btn btn-default" style="margin-top: 20px; float: left">
+  <%= link_to "Powrot", events_path %>
+</button>

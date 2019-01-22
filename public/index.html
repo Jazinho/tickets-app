@@ -2,17 +2,77 @@
 <html>
 <head>
 <title> Organizacja Wydarzen</title>
+    <style>
+        @keyframes an1 {
+            0% {
+                background-color: #f4f4f4;
+            }
+            100% {
+                background-color: white;
+            }
+        }
+
+        /* The element to apply the animation to */
+        .tile:hover {
+            animation-name: an1;
+            animation-duration: 0.75s;
+            background-color: white;
+            cursor: pointer;
+        }
+        .tile {
+            background-color: #f4f4f4;
+        }
+
+        .tickets {
+            animation-name: tick;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes tick {
+            0% {
+                left:200px; top: 50px;
+            }
+            16% {
+                left:200px; top: 350px;
+            }
+            34% {
+                left:1000px; top: 350px;
+            }
+            50% {
+                left:1000px; top: 50px;
+            }
+            66% {
+                left:1000px; top: 350px;
+            }
+            84% {
+                left:200px; top: 350px;
+            }
+            100% {
+                left:200px; top: 50px;
+            }
+        }
+    </style>
 </head>
 <body style="background-color: lightyellow">
 <div style="width: 70%; float: right;">
     <h1>Informacje o wydarzeniach i zakup biletow</h1>
-    <div style="display: flex; margin-top: 50px">
-        <div style="font-size: 30px; width: 300px; text-align: center">
-            <a href="tickets">Bilety</a>
+    <div style="display: flex; padding-left: 35px">
+        <div style="font-size: 30px; width: 250px; height: 150px; text-align: center;
+                    padding-top: 100px"
+             class="tile"
+             onclick="window.location = 'tickets'">
+            Bilety
         </div>
-        <div style="font-size: 30px; width: 200px; text-align: center">
-            <a href="events">Imprezy</a>
+        <div style="font-size: 30px; width: 250px; height: 150px; text-align: center;
+                    padding-top: 100px; border-left: 2px solid lightyellow"
+             class="tile"
+             onclick="window.location = 'events'">
+            Imprezy
         </div>
+    </div>
+    <div class="tickets" style="position: absolute">
+        <img src="tickets.png" style="width: 200px"/>
     </div>
 </div>
 </body>

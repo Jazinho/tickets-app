@@ -1,38 +1,42 @@
 <p id="notice"><%= notice %></p>
 
 <p id="komunikat"><%= flash[:komunikat] %></p>
-<p>
+<p style="font-size: 18px">
   <strong>Artist:</strong>
   <%= @event.artist %>
 </p>
 
-<p>
+<p style="font-size: 18px">
   <strong>Description:</strong>
   <%= @event.description %>
 </p>
 
-<p>
+<p style="font-size: 18px">
   <strong>Price low:</strong>
   <%= @event.price_low %>
 </p>
 
-<p>
+<p style="font-size: 18px">
   <strong>Price high:</strong>
   <%= @event.price_high %>
 </p>
 
-<p>
+<p style="font-size: 18px">
   <strong>Event date:</strong>
   <%= @event.event_date %>
 </p>
 
-<br>
-<h2> ------ KUP BILET NA TO WYDARZENIE ------ </h2>
+<div style="width: 100%; border-top: 1px solid black; margin-bottom: 40px">
+  <h3> KUP BILET NA TO WYDARZENIE </h3>
+</div>
+
 <%= render "new_ticket", ticket: Ticket.new( :event_id=>@event.id) %>
 
-<br>
-<h2> ------ BILETY KUPIONE NA TO WYDARZENIE ------ </h2>
+<div style="width: 100%; border-top: 1px solid black">
+  <h3> BILETY KUPIONE NA TO WYDARZENIE </h3>
+</div>
 <%= render "tickets_list" %>
 
-<%= link_to 'Back', events_path %>
-
+<button class="btn btn-default" style="margin-top: 20px; float: left">
+<%= link_to 'Powrot', events_path %>
+</button>

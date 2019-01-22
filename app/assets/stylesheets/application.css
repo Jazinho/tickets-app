@@ -13,4 +13,7 @@
  *= require_tree .
  *= require_self
  */
-
+.w-25 {
+    width: 25%!important;
+    display: inline-block!important;
+}

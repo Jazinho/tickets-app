@@ -9,7 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body style="background-color: lightyellow; font-size: 18px" class="container">
+  <body style="background-color: lightyellow; font-size: 18px; text-align: center!important;" class="container">
     <div class="w-100" style="border-bottom: solid 1px lightslategrey">
       <p class="pb-5" style="position: relative; width: 100%; text-align: right">
         <% if user_signed_in? %>Logged in as <strong><%= current_user.email %></strong>.

@@ -36,11 +36,12 @@
   <%= @ticket.event_id %>
 </p>
 
----------------------------------------
-<br/>
+<button class="btn btn-default" style="margin-top: 20px; float: left">
+  <%= link_to 'Powrot', tickets_path %>
+</button>
 
 <% if @ticket.user == current_user %>
-  <%= link_to 'Edycja', edit_ticket_path(@ticket) %> | 
+    <button class="btn btn-default" style="margin-top: 20px">
+      <%= link_to 'Edycja', edit_ticket_path(@ticket) %>
+    </button>
 <% end %>
-
-<%= link_to 'Back', tickets_path %>
