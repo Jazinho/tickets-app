@@ -1,11 +1,29 @@
 <h1> Wszystkie wydarzenia</h1>
-<ul>
-  <% for event in @events %>
-    <li><%= link_to event.artist, event %></li>
-  <% end %>
-</ul>
+<table class="table-striped" style="margin-bottom: 30px; margin-top: 20px">
+  <thead>
+    <th style="height: 60px">Artysta</th>
+    <th style="height: 60px">Opis</th>
+    <th style="height: 60px">Data</th>
+    <th style="height: 60px">Ceny biletów</th>
+  </thead>
+  <tbody>
+    <% for event in @events %>
+      <tr style="height: 60px; vertical-align: middle">
+        <td style="font-size: 18px"><%= link_to event.artist, event %></td>
+        <td style="font-size: 18px"><%= link_to event.description, event %></td>
+        <td style="font-size: 18px"><%= link_to "#{event.event_date}", event %></td>
+        <td style="font-size: 18px"><%= link_to "#{event.price_low}zł - #{event.price_high}zł", event %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
+<div style="width: 60%">
+  <button class="btn btn-default">
+    <%= link_to 'Powrot do menu', "/" %>
+  </button>
 
-
-<%= link_to 'Nowy koncert', new_event_path %>
-<%= link_to 'Powrot do menu', "/" %>
+  <button class="btn btn-success" style="float: right; color: white">
+    <%= link_to 'Nowy koncert', new_event_path %>
+  </button>
+</div>

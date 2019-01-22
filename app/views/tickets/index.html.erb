@@ -1,10 +1,8 @@
-<p id="notice"><%= notice %></p>
+<h1>Bilety</h1>
 
-<h1>Tickets</h1>
-
-<table>
+<table class="table-striped" style="margin-bottom: 30px; margin-top: 20px">
   <thead>
-    <tr>
+    <tr style="height: 60px">
       <th>Name</th>
       <th>Seat id seq</th>
       <th>Address</th>
@@ -18,26 +16,40 @@
 
   <tbody>
     <% @tickets.each do |ticket| %>
-      <tr>
-        <td><%= ticket.name %></td>
-        <td><%= ticket.seat_id_seq %></td>
-        <td><%= ticket.address %></td>
-        <td><%= ticket.price %></td>
-        <td><%= ticket.email_address %></td>
-	<td><%= ticket.phone %></td>
-        <td><%= ticket.event_id %></td>
-        <td><%= link_to 'Show', ticket %></td>
+      <tr style="height: 60px; vertical-align: middle;">
+        <td style="font-size: 18px"><%= ticket.name %></td>
+        <td style="font-size: 18px"><%= ticket.seat_id_seq %></td>
+        <td style="font-size: 18px"><%= ticket.address %></td>
+        <td style="font-size: 18px"><%= ticket.price %></td>
+        <td style="font-size: 18px"><%= ticket.email_address %></td>
+	      <td style="font-size: 18px"><%= ticket.phone %></td>
+        <td style="font-size: 18px"><%= ticket.event_id %></td>
+        <td style="font-size: 18px"><%= link_to 'Show', ticket %></td>
 
-        <% if ticket.user == current_user %>
-          <td><%= link_to 'Edytuj', edit_ticket_path(ticket) %></td>
-          <td><%= link_to 'Usun', ticket, method: :delete, data: { confirm: 'Jesteś pewien?' } %></td>
-        <% end %>        
+        <td style="font-size: 18px">
+          <% if ticket.user == current_user %>
+            <%= link_to 'Edytuj', edit_ticket_path(ticket) %>
+          <% end %>
+        </td>
+        <td style="font-size: 18px">
+          <% if ticket.user == current_user %>
+            <%= link_to 'Usun', ticket, method: :delete, data: { confirm: 'Jesteś pewien?' } %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<div style="width: 60%">
+  <button class="btn btn-default">
+    <%= link_to "Powrot do menu", "/"%>
+  </button>
 
-<%= link_to 'New Ticket', new_ticket_path %>
-<%= link_to "Powrot do menu", "/"%>
+  <button class="btn btn-success" style="float: right; color: white">
+    <%= link_to 'New Ticket', new_ticket_path %>
+  </button>
+</div>
+
+
+

@@ -9,24 +9,32 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <p class="navbar-text pull-right">
-      <% if user_signed_in? %>Logged in as <strong><%= current_user.email %></strong>.
-        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'%>
-      <% else %>
-        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %> |
-        <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
-      <% end %>
-    </p>
-    ------------------------------------------------------------------
-    <br/>
+  <body style="background-color: lightyellow; font-size: 18px" class="container">
+    <div class="w-100" style="border-bottom: solid 1px lightslategrey">
+      <p class="pb-5" style="position: relative; width: 100%; text-align: right">
+        <% if user_signed_in? %>Logged in as <strong><%= current_user.email %></strong>.
+          <button class="btn btn-default" style="font-size: 20px; width: 120px">
+            <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+          </button>
+          <button class="btn btn-warn" style="font-size: 20px; width: 100px">
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'%>
+          </button>
+        <% else %>
+          <button class="btn btn-default" style="font-size: 20px; width: 100px">
+            <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %>
+          </button>
+          <button class="btn btn-success" style="font-size: 20px; width: 100px">
+            <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
+          </button>
+        <% end %>
+      </p>
+    </div>
 
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
     <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
+        <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
     <%= yield %>
